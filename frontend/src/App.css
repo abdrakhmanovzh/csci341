@@ -191,16 +191,6 @@ a {
   margin-bottom: 30px;
 }
 
-.AdminButton {
-  position: absolute;
-  margin: 0;
-  right: 3%;
-  top: 7%;
-  font-size: 12px;
-  text-align: center;
-  background: white;
-}
-
 .Dashboard {
   font-size: 30px;
   color: white;
@@ -223,4 +213,8 @@ a {
   background-color: white;
   position: relative;
   margin: auto;
+}
+
+.ShowData {
+  margin: 25px 0;
 }

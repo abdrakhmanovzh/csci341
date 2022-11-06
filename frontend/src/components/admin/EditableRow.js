@@ -3,7 +3,6 @@ import React from 'react'
 const EditableRow = ({editFormData, handleEditFormChange, handleCancelClick}) => {
   return (
     <tr>
-        <td></td>
         <td>
             <input 
               type="text" 

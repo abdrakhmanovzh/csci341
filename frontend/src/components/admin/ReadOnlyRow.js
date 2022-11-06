@@ -3,7 +3,6 @@ import React from 'react'
 const ReadOnlyRow = ({user, index, handleEditClick, handleDeleteClick}) => {
   return (
     <tr key={user.id}>
-      <td>{index + 1}</td>
       <td>{user.email}</td>
       <td>{user.password}</td>
       <td>{user.role}</td>

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { nanoid } from "nanoid";
 import ReadOnlyRow from './ReadOnlyRow';
 import EditableRow from './EditableRow';
+import "../../App.css";
 
 const AdminPage = () => {
     const [token, setToken] = useState('');
@@ -99,7 +100,7 @@ const AdminPage = () => {
 
         try {
             await axiosJWT.post('http://localhost:5000/users', {
-                id: newUser.id,
+                id: parseInt(newUser.id),
                 email: newUser.email,
                 password: newUser.password,
                 role: newUser.role
@@ -190,17 +191,16 @@ const AdminPage = () => {
     }
   
     return (
-        <div className="container mt-5">
-            <h1>Welcome Back Admin</h1>
-            <form onSubmit={handleEditFormSubmit}>
-                <table className="table is-striped is-fullwidth">
+        <div className="container mt-5" style={{textAlign: "center"}}>
+            <h1 className='AdminText'>Welcome Back Admin</h1>
+            <form onSubmit={handleEditFormSubmit} className="ShowData">
+                <table className="table is-bordered is-fullwidth">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>Role</th>
-                            <th>Actions</th>
+                            <th style={{textAlign:"center"}}>Email</th>
+                            <th style={{textAlign:"center"}}>Password</th>
+                            <th style={{textAlign:"center"}}>Role</th>
+                            <th style={{textAlign:"center"}}>Actions</th>
                         </tr>
                     </thead> 
                     <tbody>
@@ -218,7 +218,7 @@ const AdminPage = () => {
                 <input type='text' name='email' required='required' placeholder='email' onChange={handleAddFormChange}/>
                 <input type='text' name='password' required='required' placeholder='password' onChange={handleAddFormChange}/>
                 <input type='text' name='role' required='required' placeholder='role' onChange={handleAddFormChange}/>
-                <button type='submit'>Add</button>
+                <button className='Admin_buttons' type='submit'>Add</button>
             </form>
         </div>
     )
